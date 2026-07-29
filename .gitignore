@@ -1,0 +1,87 @@
+# Node and package manager dependencies
+node_modules/
+
+# Log files and folders
+docs/
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variable files
+.env
+.env.local
+.env.*.local
+neoforge_profile.json
+check_syntax.js
+debug_forge_profile.js
+delete_lines.js
+starter-extension-reference.js
+test_instances_syntax.js
+test-load.js
+
+# testfiles
+*.bat
+*.sh
+
+# Production and test build outputs
+dist/
+dist/**
+build/
+build/**
+release/
+release/**
+news-admin/
+news-admin/**
+MCLC-Mod/
+MCLC-Mod-Sources/
+MCLC-Client/MCLC Website/launcher/mclc-launcher.jar
+MCLC Website/launcher/mclc-launcher.jar
+MCLC-Client/MCLC Website/launcher/
+MCLC Website/launcher/
+*.tsbuildinfo
+*.blockmap
+*.exe
+*.dmg
+*.AppImage
+*.deb
+*.rpm
+
+# Signing keys / certificates
+*.p12
+*.key
+*.pem
+*.cert
+
+# Operating system and user-specific files
+.DS_Store
+Thumbs.db
+/dist
+
+# Package manager caches
+.pnpm-store/
+.npm/
+.yarn/
+.yarn-cache/
+.yarn-integrity
+.vite/
+
+# Other
+COMMIT.md
+/MCLC-Mod-Source
+flutter/
+coverage/
+*.lcov
+.vscode/
+.vscode/**
+neoforge_profile.json
+run/
+*.minecraft/
+web/
+
+bun.lock
+debug_forge_profile.js
+check_syntax.js
+updateLocales.js
+/extensions

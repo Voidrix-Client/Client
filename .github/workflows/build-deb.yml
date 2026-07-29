@@ -1,0 +1,117 @@
+name: Build DEB
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "README.md"
+      - "CHANGELOG.md"
+      - ".github/workflows/**"
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - "README.md"
+      - "CHANGELOG.md"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+concurrency:
+  group: build-deb-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      actions: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compute build SHA (PR head or push SHA)
+        id: vars
+        shell: bash
+        run: |
+          BUILD_SHA="${{ github.event.pull_request.head.sha || github.sha }}"
+          echo "BUILD_SHA=$BUILD_SHA" >> "$GITHUB_ENV"
+          echo "SHORT_SHA=${BUILD_SHA:0:7}" >> "$GITHUB_ENV"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Set Electron cache dirs
+        shell: bash
+        run: |
+          echo "ELECTRON_CACHE_DIR=$HOME/.cache/electron" >> "$GITHUB_ENV"
+          echo "ELECTRON_BUILDER_CACHE_DIR=$HOME/.cache/electron-builder" >> "$GITHUB_ENV"
+
+      - name: Cache Electron downloads
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.ELECTRON_CACHE_DIR }}
+            ${{ env.ELECTRON_BUILDER_CACHE_DIR }}
+          key: ${{ runner.os }}-electron-${{ hashFiles('package-lock.json', 'package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-electron-
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --no-fund
+
+      - name: Create .env file for build
+        shell: bash
+        run: |
+          echo "GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}" >> .env
+          echo "GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }}" >> .env
+          echo "DROPBOX_CLIENT_ID=${{ secrets.DROPBOX_CLIENT_ID }}" >> .env
+          echo "DROPBOX_CLIENT_SECRET=${{ secrets.DROPBOX_CLIENT_SECRET }}" >> .env
+
+      - name: Build
+        run: npm run build
+
+      - name: Package
+        run: npx electron-builder --linux deb --publish never
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Add SHA to release filenames
+        shell: bash
+        run: |
+          shopt -s nullglob
+          for f in release/*; do
+            [[ -f "$f" ]] || continue
+            filename="$(basename "$f")"
+            if [[ "$filename" == *.* ]]; then
+              base="${filename%.*}"
+              ext="${filename##*.}"
+              mv -n "$f" "release/${base}-${SHORT_SHA}.${ext}"
+            else
+              mv -n "$f" "release/${filename}-${SHORT_SHA}"
+            fi
+          done
+
+      - name: Check release artifacts exist
+        id: relcheck
+        shell: bash
+        run: |
+          if [[ -d "release" ]] && compgen -G "release/*" > /dev/null; then
+            echo "has_release=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_release=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload release artifacts
+        if: steps.relcheck.outputs.has_release == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-deb-${{ env.SHORT_SHA }}
+          path: release/
+          if-no-files-found: error
+          compression-level: 6

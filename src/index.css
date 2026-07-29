@@ -1,0 +1,618 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('/assets/fonts/MinecraftDefault/MinecraftDefault-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('/assets/fonts/MinecraftDefault/MinecraftDefault-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('/assets/fonts/MinecraftDefault/MinecraftDefault-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('/assets/fonts/MinecraftDefault/MinecraftDefault-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Minecraft Five';
+  src: url('/assets/fonts/MinecraftFive/MinecraftFive-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Minecraft Five';
+  src: url('/assets/fonts/MinecraftFive/MinecraftFive-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins/Poppins-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/Inter/Inter-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/assets/fonts/Montserrat/Montserrat-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/Roboto/Roboto-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/assets/fonts/Geist/Geist-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/fonts/JetBrainsMono/JetBrainsMono-Variable.ttf') format('truetype');
+  font-weight: 100 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/assets/fonts/JetBrainsMono/JetBrainsMono-VariableItalic.ttf') format('truetype');
+  font-weight: 100 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/assets/fonts/OpenSans/OpenSans-Variable.ttf') format('truetype');
+  font-weight: 300 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/assets/fonts/OpenSans/OpenSans-VariableItalic.ttf') format('truetype');
+  font-weight: 300 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('/assets/fonts/Nunito/Nunito-Variable.ttf') format('truetype');
+  font-weight: 200 1000;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('/assets/fonts/Nunito/Nunito-VariableItalic.ttf') format('truetype');
+  font-weight: 200 1000;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('/assets/fonts/Outfit/Outfit-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/assets/fonts/Ubuntu/Ubuntu-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/assets/fonts/Ubuntu/Ubuntu-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/assets/fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/assets/fonts/Ubuntu/Ubuntu-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/assets/fonts/Ubuntu/Ubuntu-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/assets/fonts/Ubuntu/Ubuntu-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/assets/fonts/Ubuntu/Ubuntu-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/assets/fonts/Ubuntu/Ubuntu-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins/Poppins-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins/Poppins-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@layer base {
+  :root {
+    --primary-color: #7c3aed;
+    --primary-color-rgb: 124, 58, 237;
+    --background-color: #111111;
+    --background-dark-color: #0b0b0b;
+    --background-dark-color-rgb: 11, 11, 11;
+    --surface-color: #1c1c1c;
+    --surface-color-rgb: 28, 28, 28;
+    --text-on-background: #fafafa;
+    --text-on-surface: #fafafa;
+    --text-on-primary: #0d0d0d;
+    --glass-blur: 10px;
+    --glass-opacity: 0.8;
+    --console-opacity: 0.8;
+    --panel-opacity: 0.85;
+    --sidebar-glow-intensity: 0;
+    --global-glow-intensity: 0;
+    --bg-overlay-opacity: 0.4;
+    --launcher-font: 'Poppins';
+
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 11%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 263 83% 58%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 221 83% 53%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 52%;
+    --accent: 244 82% 60%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 263 83% 58%;
+    --radius: var(--border-radius, 12px);
+    --sidebar-width: 64px;
+    --sidebar-width-expanded: 248px;
+    --sidebar: 0 0% 7%;
+    --sidebar-foreground: 0 0% 52%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 14%;
+    --chart-1: 263 83% 58%;
+    --chart-2: 210 70% 50%;
+    --chart-3: 0 84% 60%;
+    --chart-4: 244 82% 60%;
+    --chart-5: 280 65% 60%;
+  }
+
+  body {
+    @apply antialiased text-foreground bg-background select-none overflow-hidden;
+    font-family: var(--launcher-font), system-ui, sans-serif;
+  }
+}
+
+.titlebar {
+  -webkit-app-region: drag;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.image-pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-pixelated;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+.sidebar-shell-transition {
+  transition-duration: 500ms;
+  transition-property: width;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sidebar-layout-transition {
+  transition-duration: 500ms;
+  transition-property: padding-left, padding-right, margin-left, margin-right, width, height, transform, opacity, max-width, max-height;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sidebar-toggle-transition {
+  transition-duration: 500ms;
+  transition-property: right, color, background-color, transform;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .sidebar-shell-transition,
+  .sidebar-layout-transition,
+  .sidebar-toggle-transition,
+  .dialog-content-zoom[data-state='open'],
+  .dialog-content-zoom[data-state='closed'] {
+    transition: none;
+    animation: none;
+  }
+}
+
+@keyframes dialog-zoom-in-place-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.94);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes dialog-zoom-in-place-out {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+}
+
+.dialog-content-zoom {
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.dialog-content-zoom[data-state='open'] {
+  animation: dialog-zoom-in-place-in 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dialog-content-zoom[data-state='closed'] {
+  animation: dialog-zoom-in-place-out 120ms cubic-bezier(0.4, 0, 1, 1);
+}
+
+@keyframes progress-fast {
+  0% {
+    transform: translateX(-100%);
+    width: 30%;
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translateX(0%);
+    width: 60%;
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(100%);
+    width: 30%;
+    opacity: 0.3;
+  }
+}
+
+.animate-progress-fast {
+  animation: progress-fast 1.5s ease-in-out infinite;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.3);
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+[data-sonner-toaster] {
+  font-family: var(--launcher-font), system-ui, sans-serif !important;
+}
+
+[data-sonner-toast][data-styled='true'] {
+  background: hsl(var(--popover)) !important;
+  color: hsl(var(--popover-foreground)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45) !important;
+}
+
+[data-sonner-toast][data-styled='true'] [data-title] {
+  color: hsl(var(--foreground)) !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+}
+
+[data-sonner-toast][data-styled='true'] [data-description] {
+  color: hsl(var(--muted-foreground)) !important;
+  font-size: 0.75rem !important;
+}
+
+[data-sonner-toast][data-styled='true'] [data-button][data-action='true'] {
+  background: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+[data-sonner-toast][data-styled='true'] [data-button][data-cancel='true'] {
+  background: hsl(var(--secondary)) !important;
+  color: hsl(var(--secondary-foreground)) !important;
+}
+
+[data-sonner-toast][data-type='success'][data-styled='true'] {
+  border-color: rgba(16, 185, 129, 0.35) !important;
+}
+
+[data-sonner-toast][data-type='error'][data-styled='true'] {
+  border-color: rgba(239, 68, 68, 0.35) !important;
+}
+
+[data-sonner-toast][data-type='info'][data-styled='true'] {
+  border-color: rgba(59, 130, 246, 0.35) !important;
+}
+
+[data-sonner-toast][data-type='warning'][data-styled='true'] {
+  border-color: rgba(245, 158, 11, 0.35) !important;
+}
+
+input[type="range"].slider-thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+input[type="range"].slider-thumb::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 6px;
+}
+
+input[type="color"]::-moz-color-swatch {
+  border: none;
+  border-radius: 6px;
+}
+
+.glass-panel {
+  background-color: rgba(var(--surface-color-rgb, 28, 28, 28), var(--panel-opacity));
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid hsl(var(--border));
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--border)) transparent;
+}
+
+.void-stage-floor {
+  position: absolute;
+  left: -15%;
+  right: -15%;
+  bottom: 0;
+  height: 46%;
+  background-image:
+    linear-gradient(rgba(var(--primary-color-rgb), 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--primary-color-rgb), 0.16) 1px, transparent 1px);
+  background-size: 46px 46px;
+  transform: perspective(480px) rotateX(62deg);
+  transform-origin: bottom center;
+  mask-image: linear-gradient(to top, black, transparent);
+  -webkit-mask-image: linear-gradient(to top, black, transparent);
+  animation: voidStageDrift 14s linear infinite;
+}
+
+.void-stage-ceiling {
+  position: absolute;
+  left: -15%;
+  right: -15%;
+  top: 0;
+  height: 30%;
+  background-image:
+    linear-gradient(rgba(var(--primary-color-rgb), 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--primary-color-rgb), 0.08) 1px, transparent 1px);
+  background-size: 46px 46px;
+  transform: perspective(480px) rotateX(-62deg);
+  transform-origin: top center;
+  mask-image: linear-gradient(to bottom, black, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+@keyframes voidStageDrift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 0 46px, 46px 0; }
+}
+
+@layer utilities {
+  .global-primary-glow {
+    box-shadow: 0 0 calc(20px * var(--global-glow-intensity, 0)) rgba(var(--primary-color-rgb), calc(0.3 * var(--global-glow-intensity, 0)));
+  }
+}
+
+@layer components {
+  .bg-card {
+    background-color: rgba(var(--surface-color-rgb, 28, 28, 28), var(--panel-opacity, 0.85)) !important;
+    backdrop-filter: blur(var(--glass-blur, 10px)) !important;
+  }
+
+  .bg-popover {
+    background-color: rgba(var(--background-dark-color-rgb, 11, 11, 11), var(--panel-opacity, 0.85)) !important;
+    backdrop-filter: blur(var(--glass-blur, 10px)) !important;
+  }
+
+  .bg-sidebar {
+    background-color: rgba(var(--background-dark-color-rgb, 11, 11, 11), var(--panel-opacity, 0.85)) !important;
+    backdrop-filter: blur(var(--glass-blur, 10px)) !important;
+    box-shadow: 2px 0 calc(20px * var(--sidebar-glow-intensity, 0)) rgba(var(--primary-color-rgb), calc(0.4 * var(--sidebar-glow-intensity, 0))) !important;
+  }
+}
+
+[data-voidrix-theme='voidrix_lava'] .bg-card,
+[data-voidrix-theme='voidrix_lava'] .bg-popover {
+  border-color: rgba(249, 115, 22, 0.35) !important;
+  box-shadow: 0 0 30px rgba(255, 115, 0, 0.08);
+}
+
+[data-voidrix-theme='voidrix_water'] .bg-card,
+[data-voidrix-theme='voidrix_water'] .bg-popover {
+  border-color: rgba(56, 189, 248, 0.35) !important;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.08);
+}
+
+[data-voidrix-theme='voidrix_horizon'] .bg-card,
+[data-voidrix-theme='voidrix_horizon'] .bg-popover {
+  border-color: rgba(59, 130, 246, 0.28) !important;
+}
+
+[data-voidrix-theme='voidrix_night'] .bg-card,
+[data-voidrix-theme='voidrix_night'] .bg-popover {
+  border-color: rgba(99, 102, 241, 0.26) !important;
+}
+
+[data-voidrix-theme='voidrix_light'] .bg-card,
+[data-voidrix-theme='voidrix_light'] .bg-popover {
+  border-color: rgba(99, 102, 241, 0.24) !important;
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.08);
+}

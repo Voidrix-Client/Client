@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npx eslint src/App.tsx src/pages/ServerComingSoon.tsx src/components/layout/AppSideBar.tsx src/components/layout/TopNavBar.tsx src/components/shared/CommandPalette.tsx src/pages/ToolsDashboard.tsx 2>&1)"
+    ]
+  }
+}
